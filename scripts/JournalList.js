@@ -1,5 +1,5 @@
-import { useJournalEntries } from "JournalDataProvider.js";
-import { Entry } from "JournalEntry.js";
+import { useJournalEntries } from "./JournalDataProvider.js";
+import { Entry } from "./JournalEntry.js";
 
 export const JournalList = () => {
   const entries = document.querySelector(".entry-container");

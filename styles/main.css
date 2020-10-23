@@ -1,8 +1,12 @@
 body {
-    background-color: bisque;
+  background-color: bisque;
 }
 
-fieldset{
-    display: flex;
-    flex-direction: column;
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-top: 1em;
 }

@@ -1,0 +1,68 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "date": "07/24/2029",
+      "concept": "Debugger",
+      "entry": "We talked using the debugger and how to use it to find problems in js",
+      "moodId": 1
+    },
+    {
+      "id": 2,
+      "date": "07/24/2026",
+      "concept": "AJAX",
+      "entry": "AJAX wuz here...",
+      "moodId": 1
+    },
+    {
+      "id": 3,
+      "date": "07/24/2028",
+      "concept": "React",
+      "entry": "We talked using React and it wsas hard and I quite and am now selling bath salts door to door.",
+      "moodId": 1
+    },
+    {
+      "id": 4,
+      "date": "2020-10-28",
+      "concept": "Farts",
+      "entry": "I farted",
+      "moodId": 4
+    },
+    {
+      "date": "2020-10-31",
+      "concept": "Stuff",
+      "entry": "We learnt about stufff like stuff and stuff",
+      "moodId": 3,
+      "id": 5
+    },
+    {
+      "date": "2020-10-21",
+      "concept": "asd",
+      "entry": "gfd",
+      "mood": "poorly",
+      "id": 6
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "label": "Sad"
+    },
+    {
+      "id": 2,
+      "label": "Morose"
+    },
+    {
+      "id": 3,
+      "label": "Despondent"
+    },
+    {
+      "id": 4,
+      "label": "Lackluster"
+    },
+    {
+      "id": 5,
+      "label": "Poorly"
+    }
+  ]
+}

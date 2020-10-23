@@ -1,8 +1,5 @@
-import { useJournalEntries } from "./JournalDataProvider.js";
-import { JournalList } from "./JournalList.js";
+import { journalForm } from "./Form.js"
+import { JournalList } from "./JournalList.js"
 
-JournalList();
-
-const entries = useJournalEntries();
-
-console.log(entries);
+journalForm()
+JournalList()

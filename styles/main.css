@@ -1,12 +1,54 @@
 body {
-  background-color: bisque;
+  background-color: #f4a261;
+  margin: 0;
+  padding: 0;
 }
 
-fieldset {
+header {
+  background-color: #2a9d8f;
+  margin: 0;
+  padding: 1.5em;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+.container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border: 3px solid black;
+  padding: 2em;
+  margin: 3em;
 }
 
 button {
-  margin-top: 1em;
+  margin: 1em 0;
+}
+
+.entry-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.entry {
+  border: 3px solid black;
+  width: 25%;
+  margin: 1em;
+  padding: 1rem;
+  background-color: #2a9d8f;
+}
+
+.entry:nth-child(even) {
+  background-color: #e9c46a;
 }

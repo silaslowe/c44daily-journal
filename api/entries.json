@@ -5,42 +5,77 @@
       "date": "07/24/2029",
       "concept": "Debugger",
       "entry": "We talked using the debugger and how to use it to find problems in js",
-      "moodId": 1
+      "mood": "sad"
     },
     {
       "id": 2,
       "date": "07/24/2026",
       "concept": "AJAX",
       "entry": "AJAX wuz here...",
-      "moodId": 1
+      "mood": "sad"
     },
     {
       "id": 3,
       "date": "07/24/2028",
       "concept": "React",
       "entry": "We talked using React and it wsas hard and I quite and am now selling bath salts door to door.",
-      "moodId": 1
+      "mood": "sad"
     },
     {
       "id": 4,
       "date": "2020-10-28",
       "concept": "Farts",
       "entry": "I farted",
-      "moodId": 4
+      "mood": "sad"
     },
     {
       "date": "2020-10-31",
       "concept": "Stuff",
       "entry": "We learnt about stufff like stuff and stuff",
-      "moodId": 3,
+      "mood": "sad",
       "id": 5
     },
     {
-      "date": "2020-10-21",
-      "concept": "asd",
-      "entry": "gfd",
+      "date": "2020-10-07",
+      "concept": "CSS",
+      "entry": "I wrote a short entry about css and how it is not the werst thing in the world but it can be annoying sometimes for sure. It isn't teaching so it has that going for it.",
+      "mood": "sad",
+      "id": 7
+    },
+    {
+      "date": "2020-11-03",
+      "concept": "Forms",
+      "entry": "It sure is fun to post entries into a fake db. It feels like magic and having magical abilities is super rad. NOT EVERYONE GET TO HAVE SUPER POWERS AND THAT IS SAD FOR THEM.\n",
+      "mood": "sad",
+      "id": 8
+    },
+    {
+      "date": "2020-10-30",
+      "concept": "Farts",
+      "entry": "I made a fart",
+      "mood": "lackluster",
+      "id": 9
+    },
+    {
+      "date": "2020-10-24",
+      "concept": "AHHHHHHH!!!!!",
+      "entry": "There is a lot to be said about things and stuff.",
       "mood": "poorly",
-      "id": 6
+      "id": 10
+    },
+    {
+      "date": "2020-10-23",
+      "concept": "asdasdsdasass",
+      "entry": "aasdas",
+      "mood": "sad",
+      "id": 11
+    },
+    {
+      "date": "2020-10-23",
+      "concept": "Form Validation",
+      "entry": "This is an attempt to create some form of form validation for my daily journal app that I am making at NSS.",
+      "mood": "sad",
+      "id": 12
     }
   ],
   "moods": [

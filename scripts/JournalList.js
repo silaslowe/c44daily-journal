@@ -7,7 +7,6 @@ const eventHub = document.querySelector(".container")
 export const JournalList = () => {
   return getEntries().then(() => {
     const entryArray = useJournalEntries()
-    console.log(entryArray)
     render(entryArray)
   })
 }

@@ -6,6 +6,8 @@
  *      the entries for different purposes.
  */
 
+import { swearCheck } from "./swearCheck.js"
+
 // This is the original data.
 // const journal = [
 //   {
@@ -72,6 +74,7 @@ export const saveEntry = (entry) => {
     },
     body: JSON.stringify(entry),
   })
+    .then(swearCheck)
     .then(getEntries)
     .then(dispatchStateChangeEvent)
 }

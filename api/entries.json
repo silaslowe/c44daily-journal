@@ -5,42 +5,28 @@
       "date": "07/24/2029",
       "concept": "Debugger",
       "entry": "We talked using the debugger and how to use it to find problems in js",
-      "moodId": 1
+      "mood": "sad"
     },
     {
       "id": 2,
       "date": "07/24/2026",
       "concept": "AJAX",
       "entry": "AJAX wuz here...",
-      "moodId": 1
+      "mood": "sad"
     },
     {
       "id": 3,
       "date": "07/24/2028",
       "concept": "React",
       "entry": "We talked using React and it wsas hard and I quite and am now selling bath salts door to door.",
-      "moodId": 1
-    },
-    {
-      "id": 4,
-      "date": "2020-10-28",
-      "concept": "Farts",
-      "entry": "I farted",
-      "moodId": 4
-    },
-    {
-      "date": "2020-10-31",
-      "concept": "Stuff",
-      "entry": "We learnt about stufff like stuff and stuff",
-      "moodId": 3,
-      "id": 5
+      "mood": "sad"
     },
     {
       "date": "2020-10-21",
-      "concept": "asd",
-      "entry": "gfd",
-      "mood": "poorly",
-      "id": 6
+      "concept": "Test",
+      "entry": "We talked using React and it was fucking hard and I quite and am now shitting bath salts door to door.",
+      "mood": "sad",
+      "id": 4
     }
   ],
   "moods": [

@@ -1,5 +1,5 @@
 import { saveEntry } from "./JournalDataProvider.js"
-import { swearCehck } from "./swearCehck.js"
+import { swearCheck } from "./swearCheck.js"
 
 const journalFormContainer = document.querySelector(".formContainer")
 
@@ -28,11 +28,8 @@ export const render = () => {
    `)
 }
 
-swearCehck()
-
 eventHub.addEventListener("keyup", (keyDownEvent) => {
   let conceptText = document.querySelector("#journalConcept")
-  console.log(conceptText.value)
   if (conceptText.value.length > 25) {
     alert("This is concpet too loooonng.")
     conceptText.value = ""
@@ -55,6 +52,7 @@ eventHub.addEventListener("click", (clickEvent) => {
     if (!date || !concept || !entry || !mood) {
       return alert("please fill out form")
     }
+    swearCheck()
     saveEntry(newEntry)
     render()
   }

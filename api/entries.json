@@ -6,6 +6,13 @@
       "entry": "Fuck yeah brah!",
       "moodId": 1,
       "id": 4
+    },
+    {
+      "date": "2020-11-06",
+      "concept": "Edit entries",
+      "entry": "if select value !== 0 journal entry field = entry id",
+      "moodId": 5,
+      "id": 5
     }
   ],
   "moods": [

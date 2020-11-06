@@ -1,15 +1,20 @@
 import { saveEntry } from "./JournalDataProvider.js"
+import { getMoods, useMoods } from "./moodProvider.js"
 import { swearCheck } from "./swearCheck.js"
 
 const journalFormContainer = document.querySelector(".formContainer")
 
 const eventHub = document.querySelector(".container")
 
-export const journalForm = () => {
-  render()
+export const JournalForm = () => {
+  return getMoods().then(() => {
+    const moodsArray = useMoods()
+    console.log(moodsArray)
+    render(moodsArray)
+  })
 }
 
-export const render = () => {
+export const render = (moodArr) => {
   return (journalFormContainer.innerHTML = `<label for="journalDate">Date of Entry</label>
    <input type="date" name="journalDate" id="journalDate" />
    <label for="journalConcept">Concept Covered</label>
@@ -18,13 +23,18 @@ export const render = () => {
    <textarea name="journalEntry" id="journalEntry" cols="30" rows="10"></textarea>
    <label for="journalMood">Mood for the Day</label>
    <select name="journalMood" id="journalMood">
-     <option value="sad">Sad</option>
-     <option value="morose">Morose</option>
-     <option value="despondent">Despondent</option>
-     <option value="lackluster">Lackluster</option>
-     <option value="poorly">Poorly</option>
+   ${moodArr
+     .map(
+       (mood) => `
+     <option value="${mood.id}">${mood.label}</option>`
+     )
+     .join("")}
    </select>
    <button id="saveEntry">Record Journal Entry</button>
+   <button id="editEntry">Edit</button>
+   <select class"updateSelect">
+   <option value="0">Select a note</option>
+   </select>
    `)
 }
 
@@ -47,13 +57,13 @@ eventHub.addEventListener("click", (clickEvent) => {
       "date": date,
       "concept": concept,
       "entry": entry,
-      "mood": mood,
+      "moodId": +mood,
     }
     if (!date || !concept || !entry || !mood) {
       return alert("please fill out form")
     }
     swearCheck()
     saveEntry(newEntry)
-    render()
+    JournalForm()
   }
 })

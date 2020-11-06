@@ -1,54 +1,55 @@
 {
   "entries": [
     {
-      "id": 1,
-      "date": "07/24/2029",
-      "concept": "Debugger",
-      "entry": "We talked using the debugger and how to use it to find problems in js",
-      "mood": "sad"
-    },
-    {
-      "id": 2,
-      "date": "07/24/2026",
-      "concept": "AJAX",
-      "entry": "AJAX wuz here...",
-      "mood": "sad"
-    },
-    {
-      "id": 3,
-      "date": "07/24/2028",
-      "concept": "React",
-      "entry": "We talked using React and it wsas hard and I quite and am now selling bath salts door to door.",
-      "mood": "sad"
-    },
-    {
-      "date": "2020-10-21",
-      "concept": "Test",
-      "entry": "We talked using React and it was fucking hard and I quite and am now shitting bath salts door to door.",
-      "mood": "sad",
+      "date": "2020-11-24",
+      "concept": "Deleting Entries",
+      "entry": "Fuck yeah brah!",
+      "moodId": 1,
       "id": 4
     }
   ],
   "moods": [
     {
       "id": 1,
-      "label": "Sad"
+      "label": "😢 Sad"
     },
     {
       "id": 2,
-      "label": "Morose"
+      "label": "😞 Morose"
     },
     {
       "id": 3,
-      "label": "Despondent"
+      "label": "😭 Despondant"
     },
     {
       "id": 4,
-      "label": "Lackluster"
+      "label": "🤬 Frusterated"
     },
     {
       "id": 5,
-      "label": "Poorly"
+      "label": "😩 Lackluster"
+    }
+  ],
+  "instructors": [
+    {
+      "id": 1,
+      "first_name": "Jisie",
+      "last_name": "David"
+    },
+    {
+      "id": 2,
+      "first_name": "Scott",
+      "last_name": "Silver"
+    },
+    {
+      "id": 3,
+      "first_name": "Madi",
+      "last_name": "Pepper"
+    },
+    {
+      "id": 3,
+      "first_name": "Bryan",
+      "last_name": "Nilson"
     }
   ]
 }

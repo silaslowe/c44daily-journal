@@ -7,7 +7,6 @@ export const swearCheck = () => {
     if (event.target.id === "saveEntry") {
       let entry = document.querySelector("#journalEntry").value
       isSwearWord(entry)
-      console.log("ENTRY OUTSIDE SWEAR FUNC", entry)
     }
   })
 }
@@ -15,8 +14,7 @@ export const swearCheck = () => {
 export const isSwearWord = (text) => {
   const swear = /fuck|shit/gi
   const qbert = "$%!@*"
-  console.log("ENTRY INSIDE SWEAR FUNC", text)
-  console.log(("ENTRY INSIDE SWEAR FUNC AFTER CALL", (text = text.replace(swear, qbert))))
+
   return (text = text.replace(swear, qbert))
 }
 //

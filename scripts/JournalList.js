@@ -4,10 +4,12 @@ import { Entry } from "./JournalEntry.js"
 const contentTarget = document.querySelector(".entry-container")
 const eventHub = document.querySelector(".container")
 
+let entriesArray = []
+
 export const JournalList = () => {
   return getEntries().then(() => {
-    const entryArray = useJournalEntries()
-    render(entryArray)
+    entriesArray = useJournalEntries()
+    render(entriesArray)
   })
 }
 
@@ -22,7 +24,6 @@ eventHub.addEventListener("journalStateChanged", (event) => {
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id.startsWith("deleteEntry--")) {
     const [prefix, id] = clickEvent.target.id.split("--")
-    console.log(id, prefix)
     /*
             Invoke the function that performs the delete operation.
 
@@ -30,8 +31,35 @@ eventHub.addEventListener("click", (clickEvent) => {
             useNotes() and render the note list again.
         */
     deleteEntry(id).then(() => {
-      const updatedNotes = useJournalEntries()
-      render(updatedNotes)
+      const updatedEntries = useJournalEntries()
+      render(updatedEntries)
     })
   }
+})
+
+eventHub.addEventListener("change", (clickEvent) => {
+  if (clickEvent.target.id.startsWith("udpdateEntry--")) {
+    const [prefix, id] = clickEvent.target.id.split("--")
+    console.log(id, prefix)
+
+    /*
+            Invoke the function that performs the delete operation.
+
+            Once the operation is complete you should THEN invoke
+            useNotes() and render the note list again.
+        */
+    updateEntry(id).then(() => {
+      const updatedEntries = useJournalEntries()
+      render(updatedEntries)
+    })
+  }
+})
+
+eventHub.addEventListener("moodChoosen", (e) => {
+  console.log(e.detail.moodThatWasChosen)
+  console.log("in event", entriesArray)
+  const filteredEntries = entriesArray.filter(
+    (entry) => entry.moodId === parseInt(e.detail.moodThatWasChosen)
+  )
+  render(filteredEntries)
 })

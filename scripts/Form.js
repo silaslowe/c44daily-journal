@@ -1,4 +1,4 @@
-import { saveEntry } from "./JournalDataProvider.js"
+import { getEntries, saveEntry, useJournalEntries } from "./JournalDataProvider.js"
 import { getMoods, useMoods } from "./moodProvider.js"
 import { swearCheck } from "./swearCheck.js"
 
@@ -7,14 +7,24 @@ const journalFormContainer = document.querySelector(".formContainer")
 const eventHub = document.querySelector(".container")
 
 export const JournalForm = () => {
-  return getMoods().then(() => {
-    const moodsArray = useMoods()
-    console.log(moodsArray)
-    render(moodsArray)
-  })
+  let moodsArray = []
+  let entriesArray = []
+
+  getMoods()
+    .then(() => {
+      moodsArray = useMoods()
+    })
+    .then(() => getEntries())
+    .then(() => {
+      entriesArray = useJournalEntries()
+    })
+    .then(() => {
+      console.log("Entries Array", entriesArray)
+      render(moodsArray, entriesArray)
+    })
 }
 
-export const render = (moodArr) => {
+export const render = (moodArr, entryArr) => {
   return (journalFormContainer.innerHTML = `<label for="journalDate">Date of Entry</label>
    <input type="date" name="journalDate" id="journalDate" />
    <label for="journalConcept">Concept Covered</label>
@@ -33,7 +43,14 @@ export const render = (moodArr) => {
    <button id="saveEntry">Record Journal Entry</button>
    <button id="editEntry">Edit</button>
    <select class"updateSelect">
-   <option value="0">Select a note</option>
+   <option value="0">Select Entry To Update</option>
+   ${entryArr
+     .map(
+       (entry) => `
+    <option value="${entry.id}">${entry.concept}</option>`
+     )
+     .join("")}
+  
    </select>
    `)
 }

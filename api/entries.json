@@ -1,11 +1,39 @@
 {
   "entries": [
     {
-      "date": "2020-11-24",
-      "concept": "Deleting Entries",
-      "entry": "Fuck yeah brah!",
+      "date": "2020-11-06",
+      "concept": "Edit entries",
+      "entry": "if select value !== 0 journal entry field = entry id",
+      "moodId": 5,
+      "id": 5
+    },
+    {
+      "date": "2020-11-13",
+      "concept": "Saddness",
+      "entry": "This had been a fucking sad state of affairs.",
       "moodId": 1,
-      "id": 4
+      "id": 6
+    },
+    {
+      "date": "2020-11-26",
+      "concept": "Shakes head in defeat",
+      "entry": "This shot has been kicking my ass all day long...",
+      "moodId": 5,
+      "id": 7
+    },
+    {
+      "date": "2020-11-05",
+      "concept": "Filter",
+      "entry": "I got the moods to filter and that's kinda neat.",
+      "moodId": 1,
+      "id": 8
+    },
+    {
+      "date": "2020-12-03",
+      "concept": "This is a test",
+      "entry": "Testing",
+      "moodId": 3,
+      "id": 9
     }
   ],
   "moods": [

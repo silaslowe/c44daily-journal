@@ -39,11 +39,12 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: 30vh;
 }
 
 .entry {
   border: 3px solid black;
-  width: 25%;
+  min-width: 25%;
   margin: 1em;
   padding: 1rem;
   background-color: #2a9d8f;

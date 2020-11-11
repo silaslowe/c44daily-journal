@@ -4,10 +4,12 @@ import { Entry } from "./JournalEntry.js"
 const contentTarget = document.querySelector(".entry-container")
 const eventHub = document.querySelector(".container")
 
+let entriesArray = []
+
 export const JournalList = () => {
   return getEntries().then(() => {
-    const entryArray = useJournalEntries()
-    render(entryArray)
+    entriesArray = useJournalEntries()
+    render(entriesArray)
   })
 }
 
@@ -51,4 +53,13 @@ eventHub.addEventListener("change", (clickEvent) => {
       render(updatedEntries)
     })
   }
+})
+
+eventHub.addEventListener("moodChoosen", (e) => {
+  console.log(e.detail.moodThatWasChosen)
+  console.log("in event", entriesArray)
+  const filteredEntries = entriesArray.filter(
+    (entry) => entry.moodId === parseInt(e.detail.moodThatWasChosen)
+  )
+  render(filteredEntries)
 })

@@ -50,6 +50,7 @@ export const render = (moodArr, entryArr) => {
     <option value="${entry.id}">${entry.concept}</option>`
      )
      .join("")}
+  
    </select>
    `)
 }

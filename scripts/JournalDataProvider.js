@@ -44,12 +44,16 @@ export const deleteEntry = (entryId) => {
   }).then(getEntries)
 }
 
-export const updateEntry = (entryId) => {
+export const updateEntry = (entryId, entry) => {
   return fetch(`http://localhost:8088/entries/${entryId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(entry),
-  }).then(getEntries)
+  })
+    .then(getEntries)
+    .then(swearCheck)
+    .then(getEntries)
+    .then(dispatchStateChangeEvent)
 }

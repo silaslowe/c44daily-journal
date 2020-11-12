@@ -8,8 +8,9 @@ export const Entry = (entryObj) => {
       <p>${entryObj.date}</p>
       <p>${entryObj.mood.label}
       <div class="btnContainer">
-      <button id="editEntry">Edit</button>
       <button id="deleteEntry--${entryObj.id}">Delete</button>
+      <button id="editEntry--${entryObj.id}">Edit</button>
+
       </div>
       </div>
     `

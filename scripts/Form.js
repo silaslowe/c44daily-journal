@@ -1,4 +1,4 @@
-import { getEntries, saveEntry, useJournalEntries } from "./JournalDataProvider.js"
+import { getEntries, saveEntry, updateEntry, useJournalEntries } from "./JournalDataProvider.js"
 import { getMoods, useMoods } from "./moodProvider.js"
 import { swearCheck } from "./swearCheck.js"
 
@@ -6,10 +6,10 @@ const journalFormContainer = document.querySelector(".formContainer")
 
 const eventHub = document.querySelector(".container")
 
-export const JournalForm = () => {
-  let moodsArray = []
-  let entriesArray = []
+let moodsArray = []
+let entriesArray = []
 
+export const JournalForm = () => {
   getMoods()
     .then(() => {
       moodsArray = useMoods()
@@ -41,17 +41,8 @@ export const render = (moodArr, entryArr) => {
      .join("")}
    </select>
    <button id="saveEntry">Record Journal Entry</button>
-   <button id="editEntry">Edit</button>
-   <select class"updateSelect">
-   <option value="0">Select Entry To Update</option>
-   ${entryArr
-     .map(
-       (entry) => `
-    <option value="${entry.id}">${entry.concept}</option>`
-     )
-     .join("")}
-  
-   </select>
+   <input type="hidden" name="entryId" id="entryId" value="">
+
    `)
 }
 
@@ -65,6 +56,7 @@ eventHub.addEventListener("keyup", (keyDownEvent) => {
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "saveEntry") {
+    const id = document.querySelector("#entryId").value
     const date = document.querySelector("#journalDate").value
     const concept = document.querySelector("#journalConcept").value
     const entry = document.querySelector("#journalEntry").value
@@ -80,7 +72,29 @@ eventHub.addEventListener("click", (clickEvent) => {
       return alert("please fill out form")
     }
     swearCheck()
-    saveEntry(newEntry)
+    if (id === "") {
+      saveEntry(newEntry)
+    } else {
+      console.log(id, newEntry)
+      updateEntry(id, newEntry)
+    }
     JournalForm()
   }
+})
+
+eventHub.addEventListener("editButtonClicked", (e) => {
+  let entryId = document.querySelector("#entryId")
+  let date = document.querySelector("#journalDate")
+  let concept = document.querySelector("#journalConcept")
+  let entry = document.querySelector("#journalEntry")
+  let mood = document.querySelector("#journalMood")
+
+  let entryToEdit = entriesArray.find(
+    (entry) => entry.id === parseInt(e.detail.entryThatWasChoosen)
+  )
+  entry.value = entryToEdit.entry
+  entryId.value = entryToEdit.id
+  date.value = entryToEdit.date
+  concept.value = entryToEdit.concept
+  mood.value = entryToEdit.mood.id
 })
